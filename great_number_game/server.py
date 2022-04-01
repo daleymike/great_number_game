@@ -25,11 +25,11 @@ def guess():
             high_low = f"You got it in {session['counter']} {guesses}! The number was {session['random']}."
             return render_template('guess.html', high_low=high_low, color="green", win=True)
         elif guess > session['random']:
-            high_low = "Too High!"
+            high_low = f"{guess} is too HIGH!"
             session['counter'] += 1
             return render_template('guess.html', high_low=high_low, color = "red")
         else:
-            high_low = "Too Low!"
+            high_low = f"{guess} is too LOW!"
             session['counter'] += 1
             return render_template('guess.html', high_low=high_low, color = "red")
     else:
