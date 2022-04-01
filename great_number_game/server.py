@@ -9,7 +9,7 @@ def index():
     session['random'] = randint(1, 100)
     session['counter'] = 0
     print(session['random'])
-    return render_template("index.html")
+    return render_template("index.html", color = "red")
 
 
 @app.route('/guess', methods=['POST'])
@@ -27,11 +27,11 @@ def guess():
         elif guess > session['random']:
             high_low = "Too High!"
             session['counter'] += 1
-            return render_template('guess.html', high_low=high_low)
+            return render_template('guess.html', high_low=high_low, color = "red")
         else:
             high_low = "Too Low!"
             session['counter'] += 1
-            return render_template('guess.html', high_low=high_low)
+            return render_template('guess.html', high_low=high_low, color = "red")
     else:
         high_low = "You failed to guess correctly in 5 attempts."
         return render_template('guess.html', high_low=high_low, color="orange")

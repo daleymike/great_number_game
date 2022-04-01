@@ -16,9 +16,8 @@
     padding: 10px;
     margin: auto;
     margin-top: 50px;
-    width: 500px;
+    width: fit-content;
     height: auto;
-    background-color: red;
 }
 
 .table{
